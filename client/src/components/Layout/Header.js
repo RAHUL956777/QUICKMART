@@ -1,45 +1,57 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <NavLink to="/" className="navbar-brand" href="#">
-            Navbar
-          </NavLink>
+          <Link to="/" className="navbar-brand">
+            QuickMart
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav">
-              <NavLink
-                to="/"
-                className="nav-link active"
-                aria-current="page"
-                href="#"
-              >
-                Home
-              </NavLink>
-              <NavLink to="/" className="nav-link" href="#">
-                Features
-              </NavLink>
-              <NavLink to="/" className="nav-link" href="#">
-                Pricing
-              </NavLink>
-              <NavLink to="/" className="nav-link disabled">
-                Disabled
-              </NavLink>
-            </div>
+          <div className="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink to="/" className="nav-link active" aria-current="page">
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/category"
+                  className="nav-link "
+                  aria-current="page"
+                >
+                  Category
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/register" className="nav-link" href="#">
+                  Register
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/login" className="nav-link" href="#">
+                  Login
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/cart" className="nav-link" href="#">
+                  Cart(0)
+                </NavLink>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
