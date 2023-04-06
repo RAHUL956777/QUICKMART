@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import { GiShoppingBag } from "react-icons/gi";
 
 const Header = () => {
   return (
@@ -7,6 +8,9 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand">
+            <GiShoppingBag
+              style={{ color: "orange", fontSize: "30px", margin: "5px" }}
+            />
             QuickMart
           </Link>
           <button
@@ -23,7 +27,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <NavLink to="/" className="nav-link active" aria-current="page">
+                <NavLink to="/" className="nav-link " aria-current="page">
                   Home
                 </NavLink>
               </li>
