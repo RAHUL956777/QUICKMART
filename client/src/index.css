@@ -166,3 +166,48 @@ h3 {
   color: white;
   text-align: center;
 }
+
+/* about  us page */
+.about-div {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  height: 30rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-div .about-left {
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  min-width: 50%;
+}
+
+.about-div .about-right {
+  /* border: 1px solid green; */
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 2rem;
+  min-width: 40%;
+  overflow: hidden;
+}
+
+/* policy page */
+.policy-div {
+  display: flex;
+  flex-direction: row;
+  height: 30rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-family: "Poppins", sans-serif;
+  background-image: url("../public/images/new1.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.policy-div .p {
+  color: black;
+  font-size: 20px;
+}
