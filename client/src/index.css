@@ -101,17 +101,68 @@
   color: white;
 }
 
-/* css for contact us page */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  border: 2px solid green;
-  min-height: 500px;
+/* contact us page */
+.h2 {
+  text-align: center;
+  margin-top: 5px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
-
-.leftgrid {
-  border: 1px solid red;
+.main-div {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+  /* margin-top: 2rem; */
+  height: 30rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-family: "Poppins", sans-serif;
 }
-.rightgrid {
-  border: 1px solid blue;
+.main-div .left {
+  /* border: 1px solid blue; */
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  min-width: 50%;
+  padding: 1rem;
+}
+.main-div .left h2 {
+  text-align: center;
+}
+.main-div .left iframe {
+  min-width: 100%;
+}
+.main-div .right {
+  /* border: 1px solid green; */
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 2rem;
+  min-width: 40%;
+  overflow: hidden;
+}
+.main-div .right h1 {
+  font-size: 25px;
+  font-weight: 500;
+}
+.main-div .right h2,
+h3 {
+  font-weight: 300;
+  padding: 5px;
+  font-size: 22px;
+}
+.main-div .right .icon {
+  font-size: 25px;
+}
+.main-div .right .icon:hover {
+  font-size: 30px;
+  color: orange;
+  cursor: pointer;
+}
+.main-div .right p {
+  font-size: 25px;
+  font-weight: 400;
+  background: #000000;
+  color: white;
+  text-align: center;
 }
