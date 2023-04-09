@@ -3,7 +3,7 @@ import Layout from "../components/Layout/Layout";
 
 const About = () => {
   return (
-    <Layout>
+    <Layout title={'About - QuickMart'}>
       <h2 className="h2">About Us</h2>
       <div className="about-div">
         <div className="about-left">

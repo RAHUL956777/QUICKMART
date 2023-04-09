@@ -1,12 +1,11 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import { Link } from "react-router-dom";
-import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
+import { BiMailSend, BiPhoneCall } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout title={"Contact Us"}>
       <h2 className="h2">Welcome to Contact Us Page</h2>
       <div className="main-div">
         <div className="left">
@@ -19,6 +18,7 @@ const Contact = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Our location"
           />
         </div>
         <div className="right">
@@ -44,4 +44,3 @@ const Contact = () => {
 };
 
 export default Contact;
-// "https://github.com/RAHUL956777
