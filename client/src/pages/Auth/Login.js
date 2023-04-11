@@ -4,30 +4,24 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const Register = () => {
-  const [name, setName] = useState("");
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
-  const [address, setAddress] = useState("");
-
   const navigate = useNavigate();
+
   // from function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("api/v1/auth/register", {
-        name,
+      const res = await axios.post("api/v1/auth/login", {
         email,
         password,
-        phone,
-        address,
       });
       if (res.data.success) {
         toast.success(res.data && res.data.message, {
           duration: 5000,
         });
-        navigate("/login");
+        navigate("/");
       } else {
         toast.error(res.data.message);
       }
@@ -36,24 +30,13 @@ const Register = () => {
       toast.error("something went rong");
     }
   };
+
   return (
     <Layout title={"Register - QuickMart"}>
       <div className="form-container">
-        <h1 className="title">Welcome to Register Form</h1>
+        <h1 className="title">Welcome to Login Form</h1>
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputText"
-              placeholder="Enter Your Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              autoComplete="off"
-            />
-          </div>
           <div className="mb-3">
             <input
               type="email"
@@ -78,32 +61,9 @@ const Register = () => {
               autoComplete="off"
             />
           </div>
-          <div className="mb-3">
-            <input
-              type="number"
-              className="form-control"
-              id="exampleInputNuber"
-              placeholder="Enter your phone no"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              required
-              autoComplete="off"
-            />
-          </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control"
-              id="exampleInputAddress"
-              placeholder="Enter your Address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-              autoComplete="off"
-            />
-          </div>
+
           <button type="submit" className="btns">
-            REGISTER
+            LOGIN
           </button>
         </form>
       </div>
@@ -111,4 +71,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
