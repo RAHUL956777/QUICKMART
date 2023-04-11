@@ -102,7 +102,7 @@
 }
 
 /* contact us page */
-.h2 {
+.h2, .h1 {
   text-align: center;
   margin-top: 5px;
   text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
@@ -210,4 +210,13 @@ h3 {
 .policy-div .p {
   color: black;
   font-size: 20px;
+}
+
+/* ======register page start here */
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  flex-direction: column;
 }
