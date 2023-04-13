@@ -24,9 +24,7 @@ const Register = () => {
         address,
       });
       if (res.data.success) {
-        toast.success(res.data && res.data.message, {
-          duration: 5000,
-        });
+        toast.success(res.data && res.data.message);
         navigate("/login");
       } else {
         toast.error(res.data.message);
@@ -39,7 +37,7 @@ const Register = () => {
   return (
     <Layout title={"Register - QuickMart"}>
       <div className="form-container">
-        <h1 className="title">Welcome to Register Form</h1>
+        <h1 className="title"> Register Form</h1>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3">

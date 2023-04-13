@@ -18,9 +18,7 @@ const Login = () => {
         password,
       });
       if (res.data.success) {
-        toast.success(res.data && res.data.message, {
-          duration: 5000,
-        });
+        toast.success(res.data && res.data.message);
         navigate("/");
       } else {
         toast.error(res.data.message);
