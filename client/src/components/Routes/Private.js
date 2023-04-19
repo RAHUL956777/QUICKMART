@@ -5,7 +5,7 @@ import axios from "axios";
 import Spinner from "../Spinner";
 
 export default function PrivateRoute() {
-  const { ok, setOk } = useState(false);
+  const [ok, setOk] = useState(false);
   const { auth, setAuth } = useAuth();
 
   useEffect(() => {

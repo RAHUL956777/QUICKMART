@@ -3,8 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 
 const Spinner = () => {
   const [count, setCount] = useState(5);
-  const location = useLocation();
   const navigaet = useNavigate();
+  const location = useLocation();
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((prevValue) => --prevValue);
@@ -14,7 +14,7 @@ const Spinner = () => {
         state: location.pathname,
       });
     return () => clearInterval(interval);
-  }, [count, navigaet,location]);
+  }, [count, navigaet, location]);
   return (
     <>
       <div

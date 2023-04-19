@@ -10,6 +10,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
+  const [answer, setAnswer] = useState("");
 
   const navigate = useNavigate();
   // from function
@@ -22,6 +23,7 @@ const Register = () => {
         password,
         phone,
         address,
+        answer,
       });
       if (res.data.success) {
         toast.success(res.data && res.data.message);
@@ -96,6 +98,18 @@ const Register = () => {
               placeholder="Enter your Address"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
+              required
+              autoComplete="off"
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="text"
+              className="form-control"
+              id="exampleInputAddress"
+              placeholder="What is your favorite sports?"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
               required
               autoComplete="off"
             />
