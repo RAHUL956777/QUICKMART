@@ -24,6 +24,7 @@
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.22",
-    "react-router-dom": "^6.10.0"
+    "react-router-dom": "^6.10.0",
+    "slugify": "^1.6.6"
   }
 }
