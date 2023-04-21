@@ -68,3 +68,63 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## dependiencies<br/>
+  ### backend dependiencies<br/>
+          "bcrypt": "^5.1.0",
+          "colors": "^1.4.0",
+          "concurrently": "^8.0.1",
+          "cors": "^2.8.5",
+          "dotenv": "^16.0.3",
+          "express": "^4.18.2",
+          "jsonwebtoken": "^9.0.0",
+          "mongoose": "^7.0.3",
+          "morgan": "^1.10.0",
+          "nodemon": "^2.0.22",
+          "react-router-dom": "^6.10.0"
+   
+    
+     frontend dependiencies
+    
+            "axios": "^1.3.5",
+            "react": "^18.2.0",
+            "react-dom": "^18.2.0",
+            "react-helmet": "^6.1.0",
+            "react-hot-toast": "^2.4.0",
+            "react-icons": "^4.8.0",
+            "react-router-dom": "^6.10.0",
+            "react-scripts": "5.0.1",
+            "react-spinners": "^0.13.8",
+            "web-vitals": "^2.1.4"
+    
+ #  To run The Project in your localhoat
+ ## backend is running on port 8080
+ `npm  start` for run run backend server<br/>
+ `npm run server` for run backend server ushing nodemon
+ ## frontend is running on port 3000
+  `npm run client` for running the frontend
+  
+  ### Start Frontend & Backend at the same time
+  `npm run dev` To run frontend and backend concurently
+  
+  #  Cloning this project from github
+    ## follow the follwing steps
+    Open your terminal or command prompt on your local machine.
+
+    Navigate to the directory where you want to clone the project. You can use the cd command to change directories.
+  
+    Type the following command to clone the project:
+    `git clone https://github.com/RAHUL956777/This command will create a new directory named "QUICKMART" in your current directory and clone the project files into it.
+
+    Once the cloning process is complete, you can navigate into the cloned directory using the cd command:QUICKMART.git`
+    This command will create a new directory named "QUICKMART" in your current directory and clone the project files into it.
+
+        Once the cloning process is complete, you can navigate into the cloned directory using the ``cd` command:
+          `cd QUICKMART`
+          Now you can view the project files on your local machine and make any changes as needed.
+
+Note: You need to have Git installed on your local machine to clone a project from Github. You can download Git from the official Git website: https://git-scm.com/downloads.
+
+
+    
+  
