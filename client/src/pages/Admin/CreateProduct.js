@@ -10,6 +10,7 @@ const { Option } = Select;
 
 const CreateProduct = () => {
   const navigate = useNavigate();
+
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -43,6 +44,7 @@ const CreateProduct = () => {
       const productData = new FormData();
       productData.append("name", name);
       productData.append("description", description);
+      productData.append("price", price);
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
@@ -51,10 +53,10 @@ const CreateProduct = () => {
         productData
       );
       if (data?.success) {
-        toast.error(data.message);
-      } else {
         toast.success("Product Created Sucessfully");
         navigate("/dashboard/admin/products");
+      } else {
+        toast.error(data?.message);
       }
     } catch (error) {
       console.log(error);
@@ -135,7 +137,7 @@ const CreateProduct = () => {
 
               <div className="mb-3">
                 <input
-                  type="text"
+                  type="number"
                   value={price}
                   placeholder="Write a price"
                   className="form-control"
