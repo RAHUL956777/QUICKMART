@@ -330,3 +330,10 @@ h3 {
   background: var(--bg-hvr);
   color: var(--white);
 }
+
+
+/* for product.js */
+.product-link{
+  text-decoration: none;
+  color: black !important;
+}

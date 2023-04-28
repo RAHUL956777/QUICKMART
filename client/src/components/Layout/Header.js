@@ -63,7 +63,7 @@ const Header = () => {
                 </>
               ) : (
                 <>
-                  <li class="nav-item dropdown">
+                  <li className="nav-item dropdown">
                     <NavLink
                       className="nav-link dropdown-toggle"
                       role="button"
