@@ -34,7 +34,7 @@ const UpdateProduct = () => {
       setPrice(data.product.price);
       setQuantity(data.product.quantity);
       setShipping(data.product.shipping);
-      setCategory(data.product.category);
+      setCategory(data.product.category._id);
     } catch (error) {
       console.log(error);
     }
@@ -62,8 +62,8 @@ const UpdateProduct = () => {
     getAllCategory();
   }, []);
 
-  // create product function
-  const handleCreate = async (e) => {
+  // update product function
+  const handleUpdate = async (e) => {
     e.preventDefault();
     try {
       const productData = new FormData();
@@ -71,14 +71,14 @@ const UpdateProduct = () => {
       productData.append("description", description);
       productData.append("price", price);
       productData.append("quantity", quantity);
-      productData.append("photo", photo);
+      photo && productData.append("photo", photo);
       productData.append("category", category);
-      const { data } = await axios.post(
-        "/api/v1/product/create-product",
+      const { data } = await axios.put(
+        `/api/v1/product/update-product/${id}`,
         productData
       );
       if (data?.success) {
-        toast.success("Product Created Sucessfully");
+        toast.success("Product Updated Sucessfully");
         navigate("/dashboard/admin/products");
       } else {
         toast.error(data?.message);
@@ -86,6 +86,24 @@ const UpdateProduct = () => {
     } catch (error) {
       console.log(error);
       toast.error("Something Went wrong");
+    }
+  };
+
+  // delete a product
+  const handleDelete = async () => {
+    try {
+      let answer = window.prompt(
+        "Are you sure You want to delete this product ? "
+      );
+      if (!answer) return;
+      const { data } = await axios.delete(
+        `/api/v1/product/delete-product/${id}`
+      );
+      toast.success("Product Deleted Sucessfully");
+      navigate("/dashboard/admin/products");
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong");
     }
   };
 
@@ -108,7 +126,7 @@ const UpdateProduct = () => {
                 onChange={(value) => {
                   setCategory(value);
                 }}
-                value={category.name}
+                value={category}
               >
                 {categories?.map((c) => (
                   <Option key={c._id} value={c._id}>
@@ -129,10 +147,19 @@ const UpdateProduct = () => {
                 </label>
               </div>
               <div className="mb-3">
-                {photo && (
+                {photo ? (
                   <div className="text-center">
                     <img
                       src={URL.createObjectURL(photo)}
+                      alt="Product-photo"
+                      height={"200px"}
+                      className="img img-responsive"
+                    />
+                  </div>
+                ) : (
+                  <div className="text-center">
+                    <img
+                      src={`/api/v1/product/product-photo/${id}`}
                       alt="Product-photo"
                       height={"200px"}
                       className="img img-responsive"
@@ -196,8 +223,13 @@ const UpdateProduct = () => {
                 </Select>
               </div>
               <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleCreate}>
+                <button className="btn btn-primary" onClick={handleUpdate}>
                   UPDATE PRODUCT
+                </button>
+              </div>
+              <div className="mb-3">
+                <button className="btn btn-danger" onClick={handleDelete}>
+                  DELETE PRODUCT
                 </button>
               </div>
             </div>
