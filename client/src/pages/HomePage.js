@@ -10,6 +10,7 @@ const HomePage = () => {
   const [checked, setChecked] = useState([]);
   const [radio, setRadio] = useState([]);
 
+
   // get all category
   const getAllCategory = async (req, res) => {
     try {
@@ -94,9 +95,16 @@ const HomePage = () => {
               ))}
             </Radio.Group>
           </div>
+          <div className="d-flex flex-column">
+            <button
+              className="btn btn-danger mt-2"
+              onClick={() => window.location.reload()}
+            >
+              RESET FILTERS
+            </button>
+          </div>
         </div>
         <div className="col-md-9">
-          {JSON.stringify(radio, null, 4)}
           <h1 className="text-center">All Products</h1>
           <div className="d-flex flex-wrap">
             {products?.map((p) => (
@@ -105,7 +113,7 @@ const HomePage = () => {
                   src={`/api/v1/product/product-photo/${p._id}`}
                   className="card-img-top"
                   alt={p.name}
-                  style={{ height: "200px" }}
+                  style={{ height: "220px" }}
                 />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
