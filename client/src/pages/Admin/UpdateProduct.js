@@ -60,6 +60,7 @@ const UpdateProduct = () => {
 
   useEffect(() => {
     getAllCategory();
+    // eslint-disable-next-line
   }, []);
 
   // update product function
