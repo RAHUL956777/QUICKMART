@@ -44,10 +44,12 @@ const HomePage = () => {
 
   useEffect(() => {
     if (!checked.length || !radio.length) getAllProducts();
+    // eslint-disable-next-line
   }, [checked.length, radio.length]);
 
   useEffect(() => {
     if (checked.length || radio.length) filterProduct();
+    // eslint-disable-next-line
   }, [checked, radio]);
 
   // get total count
@@ -62,6 +64,7 @@ const HomePage = () => {
 
   useEffect(() => {
     getTotal();
+    // eslint-disable-next-line
   }, []);
 
   // loadmore
@@ -80,6 +83,7 @@ const HomePage = () => {
   useEffect(() => {
     if (page === 1) return;
     loadMore();
+    // eslint-disable-next-line
   }, [page]);
 
   // filter by category
@@ -121,7 +125,7 @@ const HomePage = () => {
               </Checkbox>
             ))}
           </div>
-          {/* *************======Price filter=========***** */}
+          {/* *************======Price filter=========******** */}
           <h4 className="text-center mt-4">Filter By Price</h4>
           <div className="d-flex flex-column">
             <Radio.Group onChange={(e) => setRadio(e.target.value)}>
