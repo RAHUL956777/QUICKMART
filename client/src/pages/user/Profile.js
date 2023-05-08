@@ -8,6 +8,7 @@ import axios from "axios";
 const Profile = () => {
   // context
   const { auth, setAuth } = useAuth();
+
   // state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -28,7 +29,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.put("api/v1/auth/profile", {
+      const { data } = await axios.put("/api/v1/auth/profile", {
         name,
         email,
         password,

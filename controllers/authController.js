@@ -154,7 +154,7 @@ export const forgotPasswordController = async (req, res) => {
 // test controller
 export const testController = (req, res) => {
   try {
-    res.send("Protected ROute");
+    res.send("Protected Route");
   } catch (error) {
     console.log(error);
     res.send({ error });
@@ -166,6 +166,7 @@ export const updateProfileController = async (req, res) => {
   try {
     const { name, email, password, address, phone } = req.body;
     const user = await userModel.findById(req.user._id);
+
     // password
     if (password && password.length < 6) {
       return res.json({
