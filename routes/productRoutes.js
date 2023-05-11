@@ -70,10 +70,10 @@ router.get("/related-product/:pid/:cid", relatedProductController);
 router.get("/product-category/:slug", productCategoryController);
 
 // payments route
-
 // token
 router.get("/braintree/token", braintreeTokenController);
 
 // payments
 router.post("/braintree/payment", requireSignIn, braintreePaymentController);
+
 export default router;

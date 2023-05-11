@@ -9,7 +9,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 // payment gateway
-let gateway = new braintree.BraintreeGateway({
+var gateway = new braintree.BraintreeGateway({
   environment: braintree.Environment.Sandbox,
   merchantId: process.env.BRAINTREE_MERCHANT_ID,
   publicKey: process.env.BRAINTREE_PUBLIC_KEY,
@@ -366,7 +366,7 @@ export const braintreePaymentController = async (req, res) => {
       },
       function (error, result) {
         if (result) {
-          constorder = new orderModel({
+          const order = new orderModel({
             products: cart,
             payment: result,
             buyer: req.user._id,

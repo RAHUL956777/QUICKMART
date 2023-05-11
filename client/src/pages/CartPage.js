@@ -3,8 +3,8 @@ import Layout from "./../components/Layout/Layout";
 import { useCart } from "../context/cart";
 import { useAuth } from "../context/auth";
 import { useNavigate } from "react-router-dom";
-import DropIn from "braintree-web-drop-in-react";
 import axios from "axios";
+import DropIn from "braintree-web-drop-in-react";
 import { toast } from "react-hot-toast";
 
 const CartPage = () => {
@@ -71,7 +71,7 @@ const CartPage = () => {
       setLoading(false);
       localStorage.removeItem("cart");
       setCart([]);
-      navigate("/dashboard/user/order");
+      navigate("/dashboard/user/orders");
       toast.success("Payment Completed Successfully");
     } catch (error) {
       console.log(error);
@@ -163,7 +163,7 @@ const CartPage = () => {
                 )}
               </div>
             )}
-            <div className="mt-2">
+            <div className="mt-2 mb-3">
               {!clientToken || !cart?.length ? (
                 ""
               ) : (
@@ -180,7 +180,7 @@ const CartPage = () => {
                   <button
                     className="btn btn-primary"
                     onClick={handlePayment}
-                    disabled={!loading || !instance || !auth?.user?.address}
+                    disabled={loading || !instance || !auth?.user?.address}
                   >
                     {loading ? "Processing ....." : "Make Payment"}
                   </button>
