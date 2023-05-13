@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import AdminMenu from "../../components/Layout/AdminMenu";
 import Layout from "../../components/Layout/Layout";
 import axios from "axios";
-import toast from "react-hot-toast";
 import { useAuth } from "../../context/auth";
 import moment from "moment";
+import { Select } from "antd";
+
+const { Option } = Select;
 
 const AdminOrder = () => {
   const { auth, setAuth } = useAuth();
@@ -21,6 +23,7 @@ const AdminOrder = () => {
   const getOrders = async (req, res) => {
     try {
       const { data } = await axios.get("/api/v1/auth/all-orders");
+
       setOrders(data);
     } catch (error) {
       console.log(error);
@@ -30,6 +33,17 @@ const AdminOrder = () => {
   useEffect(() => {
     if (auth?.token) getOrders();
   }, [auth?.token]);
+
+  const handleChange = async (orderId, value) => {
+    try {
+      const { data } = await axios.put(`/api/v1/auth/order-status/${orderId}`, {
+        status: value,
+      });
+      getOrders();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <Layout title={"All Orders Data"}>
@@ -56,7 +70,19 @@ const AdminOrder = () => {
                   <tbody>
                     <tr>
                       <td>{i + 1}</td>
-                      <td>{o?.status}</td>
+                      <td>
+                        <Select
+                          bordered={false}
+                          onChange={(value) => handleChange(o._id, value)}
+                          defaultValue={o?.status}
+                        >
+                          {status.map((s, i) => (
+                            <Option key={i} value={s}>
+                              {s}
+                            </Option>
+                          ))}
+                        </Select>
+                      </td>
                       <td>{o?.buyer?.name}</td>
                       <td>{moment(o?.createAt).fromNow()}</td>
                       <td>{o?.payment.success ? "Success" : "Failed"}</td>

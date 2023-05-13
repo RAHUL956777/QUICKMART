@@ -1,11 +1,14 @@
+/* ===================================
+========= register page  */
 .form-container {
+  margin-top: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 70vh;
   flex-direction: column;
   background-color: #ffdee9;
-  background-image: linear-gradient(0deg, #ffdee9 0%, #d5fffc 100%);
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
 }
 
 .form-container form {
@@ -27,7 +30,7 @@
   border-radius: 0;
 }
 
-.form-container form .btns {
+.form-container form button {
   border: 1px solid black;
   border-radius: 0;
   background-color: #000;
@@ -35,17 +38,26 @@
   width: 250px;
 }
 
-.form-container form .btns:hover {
+.form-container form button:hover {
   border: 1px solid black;
-  background: #000000; /*fallback for old browser */
-  background: --webkit-linear-gradient(
+  background: #000000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
     to right,
     #434343,
     #000000
-  ); /*chrome 10-25, Safari 5.1.6*/
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     #434343,
     #000000
-  ); /*its for updated browser*/
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.forgot-btn {
+  background-color: #434343a4 !important;
+  border: 0 !important;
+}
+
+.forgot-btn:hover {
+  color: white !important;
 }
